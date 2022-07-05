@@ -18,8 +18,7 @@ import os
 
 intents = Intents.default()
 intents.members = True
-api = f"https://api.minetools.eu/ping/{readConfig('Url')}/{readConfig('Port')}"
-desc = r"\u00a7cWelcome to \u00a79TheSMP \u00a7cof \u00a7a{\u00a7o\u00a7kX\u00a7a\u00a7o\u00a7nTechnoDot\u00a7a\u00a7o\u00a7kX\u00a7a}\u00a7b!"
+
 bot: Client = Client(intents=intents)
 guild_ids: list = readConfig("guildIds")
 
@@ -45,7 +44,7 @@ async def hello(interaction: Interaction, user: Member):
     name="status", description="Checks server status of server", guild_ids=guild_ids
 )
 async def status(interaction: Interaction):
-    payload = json.loads(http.urlopen(api).read())
+    payload = json.loads(http.urlopen(f"https://api.minetools.eu/ping/{readConfig('Url')}/{readConfig('Port')}").read())
     if payload.get("error"):
         embed = Embed(
             title="Server is Offline",
