@@ -1,0 +1,24 @@
+{
+    "guildIds": {
+        "type": "list",
+        "store": [990698946814963812]
+    },
+    "OnJoinRolesID": {
+        "type": "list",
+        "store": [
+            993471047657594981
+        ]
+    },
+    "WelcomeChannelID": {
+        "type": "int",
+        "store": 1234
+    },
+    "Url": {
+        "type": "str",
+        "store": null
+    },
+    "Port": {
+        "type": "int",
+        "store": null
+    }
+}
