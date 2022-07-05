@@ -9,7 +9,6 @@ from nextcord import (
     utils,
     Color,
 )
-from typing import Optional
 import urllib.request as http
 from jsonHandler import readConfig
 import json
