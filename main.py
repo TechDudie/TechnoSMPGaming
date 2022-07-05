@@ -45,7 +45,6 @@ async def hello(interaction: Interaction, user: Member):
     name="status", description="Checks server status of server", guild_ids=guild_ids
 )
 async def status(interaction: Interaction):
-    running, online = False, []
     payload = json.loads(http.urlopen(api).read())
     if payload.get("error"):
         embed = Embed(
@@ -55,7 +54,7 @@ async def status(interaction: Interaction):
         )
 
     if payload.get("description"):
-        running = True
+        online = []
         for user in payload.get("players").get("sample"):
             online.append(user.get("name"))
         embed = Embed(
